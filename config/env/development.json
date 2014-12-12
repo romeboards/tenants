@@ -1,0 +1,6 @@
+{
+    "db": "mongodb://localhost/housing",
+    "app": {
+        "name": "tenants - easy nyc building info for tenants - Development"
+    }
+}

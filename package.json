@@ -1,0 +1,55 @@
+{
+    "name": "tenants",
+    "description": "easy nyc building info for tenants",
+    "version": "0.0.1",
+    "private": false,
+    "author": "romeboards",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/romeboards/tenants.git"
+    },
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.2.x"
+    },
+    "scripts": {
+        "start": "node node_modules/grunt-cli/bin/grunt",
+        "test": "node node_modules/grunt-cli/bin/grunt test"
+    },
+    "dependencies": {
+        "express": "latest",
+        "morgan": "latest",
+        "cookie-parser": "latest",
+        "serve-static": "latest",
+        "body-parser": "latest",
+        "compression": "latest",
+        "method-override": "latest",
+        "express-session": "latest",
+        "static-favicon": "latest",
+        "consolidate": "latest",
+        "jade": "latest",
+        "mongoose": "latest",
+        "connect-mongo": "latest",
+        "connect-flash": "latest",
+        "underscore": "latest",
+        "async": "latest",
+        "view-helpers": "latest",
+        "forever": "latest",
+        "grunt": "latest",
+        "grunt-cli": "latest",
+        "mongoskin": "latest"
+    },
+    "devDependencies": {
+        "supertest": "latest",
+        "should": "latest",
+        
+        "grunt-contrib-compass": "~0.5.0",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-nodemon": "latest",
+        "grunt-concurrent": "latest",
+        "grunt-mocha-test": "latest",
+        "load-grunt-tasks": "~0.1.0",
+        "time-grunt": "~0.1.1"
+    }
+}

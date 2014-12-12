@@ -1,0 +1,47 @@
+<!-- <section data-ng-controller="IndexController"> -->
+<section>
+  <div class="jumbotron">
+    <div class="main">
+ 
+      <div data-ng-show="requests">
+        <h3>311 service requests</h3>
+        <table class="table">
+          <tr>
+            <th>Created Date</th>
+            <th>Closed Date</th>
+            <th>Status</th>
+            <th>Complaint Type</th>
+            <th>Description</th>
+          </tr>
+          <tr data-ng-repeat="request in requests | orderBy:-request.created_date" >
+            <td>{{ request.created_date | date }}</td>
+            <td>{{ request.closed_date | date }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.complaint_type }}</td>
+            <td>{{ request.descriptor }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div data-ng-show="hpdviolations">
+        <h3>HPD code violations</h3>
+        <table class="table">
+          <tr>
+            <th>Inspection Date</th>
+            <th>Last Updated</th>
+            <th>Violation ID</th>
+            <th>Status</th>
+            <th>Description</th>
+          </tr>
+          <tr data-ng-repeat="violation in hpdviolations | orderBy:-violation.inspectiondate" >
+            <td>{{ violation.inspectiondate | date }}</td>
+            <td>{{ violation.currentstatusdate | date }}</td>
+            <td>{{ violation.violationid }}</td>
+            <td>{{ violation.currentstatus }}</td>
+            <td>{{ violation.novdescription }}</td>
+          </tr>
+        </table>
+      </div>    
+    </div>
+  </div>  
+</section>

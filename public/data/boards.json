@@ -1,0 +1,334 @@
+[
+  {
+    "01 BROOKLYN": {
+      "neighborhoods": "Flushing Avenue, Williamsburg, Greenpoint, Northside, and Southside",
+      "address": "435 Graham Avenue, Brooklyn, NY 11211",
+      "phone": "718-389-0009",
+      "email": "bk01@cb.nyc.gov",
+      "website": "http://www.nyc.gov/brooklyncb1",
+      "chair": "Christopher H. Olechowski",
+      "district_manager": "Gerald A. Esposito",
+      "board_meeting": "Second Tuesday, 6:30pm",
+      "cabinet_meeting": "Third Thursday, 10:30am",
+      "precincts": [
+        {
+          "id": "90",
+          "phone": "718-963-5311"
+        },
+        {
+          "id": "94",
+          "phone": "718-383-3879"
+        }
+      ]
+    },
+    "02 BROOKLYN": {
+      "neighborhoods": "Brooklyn Heights, Fulton Mall, Boerum Hill, Fort Greene, Brooklyn Navy Yard, Fulton Ferry, and Clinton Hill",
+      "address": "350 Jay Street, 8th Floor, Brooklyn, NY 11201",
+      "phone": "718-596-5410",
+      "email": "cb2k@nyc.rr.com",
+      "website": "http://www.nyc.gov/html/bkncb2/html/home/home.shtml",
+      "chair": "John Dew",
+      "district_manager": "Robert Perris",
+      "board_meeting": "Second Wednesday, 6:00pm",
+      "cabinet_meeting": "Per agenda",
+      "precincts": [
+        {
+          "id": "84",
+          "phone": "718-875-6811"
+        },
+        {
+          "id": "88",
+          "phone": "718-636-6511"
+        }
+      ]
+    },
+    "03 BROOKLYN": {
+      "neighborhoods": "Bedford-Stuyvesant, Stuyvesant Heights, and Ocean Hill",
+      "address": "1360 Fulton Street, Brooklyn, NY 11216",
+      "phone": "718-622-6601",
+      "email": "bk03@cb.nyc.gov",
+      "website": "http://cb3brooklyn.org",
+      "chair": "Tremaine Wright",
+      "district_manager": "Henry Butler",
+      "board_meeting": "First Monday, 7:00pm",
+      "cabinet_meeting": "Fourth Thursday, 9:30am",
+      "precincts": [
+        {
+          "id": "79",
+          "phone": "718-635-6611"
+        },
+        {
+          "id": "81",
+          "phone": "718-574-0411"
+        }
+      ]
+    },
+    "04 BROOKLYN": {
+      "neighborhoods": "Bushwick",
+      "address": "1420 Bushwick Avenue, Suite 370, Brooklyn, NY 11207-1422",
+      "phone": "718-628-8400",
+      "email": "bk04@cb.nyc.gov",
+      "website": "http://www.nyc.gov/brooklyncb4",
+      "chair": "Julie Dent",
+      "district_manager": "Nadine Whitted",
+      "board_meeting": "Third Wednesday, 6:00pm",
+      "cabinet_meeting": "Second Wednesday, 10:00am",
+      "precincts": [
+        {
+          "id": "83",
+          "phone": "718-574-1605"
+        }
+      ]
+    },
+    "05 BROOKLYN": {
+      "neighborhoods": "East New York, Cypress Hills, Highland Park, New Lots, City Line, Starrett City, and Ridgewood",
+      "address": "127 Pennsylvania Avenue, Brooklyn, NY 11207",
+      "phone": "718-498-5711",
+      "email": "bklcb5@verizon.net",
+      "website": "",
+      "chair": "Nathan Bradley",
+      "district_manager": "Walter Campbell",
+      "board_meeting": "Fourth Wednesday, 6:30pm",
+      "cabinet_meeting": "Third Wednesday, 10:00am",
+      "precincts": [
+        {
+          "id": "75",
+          "phone": "718-827-3511"
+        }
+      ]
+    },
+    "06 BROOKLYN": {
+      "neighborhoods": "Red Hook, Carroll Gardens, Park Slope, Gowanus, and Cobble Hill",
+      "address": "250 Baltic Street, Brooklyn, NY 11201",
+      "phone": "718-643-3027",
+      "email": "info@brooklyncb6.org",
+      "website": "http://www.brooklyncb6.org/",
+      "chair": "Daniel Kummer",
+      "district_manager": "Craig Hammerman",
+      "board_meeting": "Second Wednesday, 6:30pm",
+      "cabinet_meeting": "First Wednesday of every other month, 9:30am",
+      "precincts": [
+        {
+          "id": "76",
+          "phone": "718-834-3211"
+        },
+        {
+          "id": "78",
+          "phone": "718-636-6411"
+        }
+      ]
+    },
+    "07 BROOKLYN": {
+      "neighborhoods": "Sunset Park and Windsor Terrace",
+      "address": "4201 4th Avenue, Brooklyn, NY 11232",
+      "phone": "718-854-0003",
+      "email": "communityboard7@yahoo.com",
+      "website": "http://www.brooklyncb7.org/",
+      "chair": "Fred Xuereb",
+      "district_manager": "Jeremy Laufer",
+      "board_meeting": "Third Wednesday, 6:30pm",
+      "cabinet_meeting": "Second Thursday, 10:00am",
+      "precincts": [
+        {
+          "id": "72",
+          "phone": "718-965-6311"
+        }
+      ]
+    },
+    "08 BROOKLYN": {
+      "neighborhoods": "Crown Heights, Prospect Heights, and Weeksville",
+      "address": "1291 St. Marks Avenue, Brooklyn, NY 11213",
+      "phone": "718-467-5574",
+      "email": "info@brooklyncb8.org",
+      "website": "http://www.brooklyncb8.org/",
+      "chair": "Nizjoni Granville",
+      "district_manager": "Michelle George",
+      "board_meeting": "Second Thursday, 7:00pm",
+      "cabinet_meeting": "Per Agenda",
+      "precincts": [
+        {
+          "id": "77",
+          "phone": "718-735-0611"
+        },
+        {
+          "id": "78",
+          "phone": "718-636-6411"
+        }
+      ]
+    },
+    "09 BROOKLYN": {
+      "neighborhoods": "Crown Heights, Prospect Lefferts Gardens, and Wingate",
+      "address": "890 Nostrand Avenue, Brooklyn, NY 11225",
+      "phone": "718-778-9279",
+      "email": "bk09@cb.nyc.gov",
+      "website": "http://www.communitybrd9bklyn.org/",
+      "chair": "Jacob Z. Goldstein",
+      "district_manager": "Pearl R. Miles",
+      "board_meeting": "Fourth Tuesday, 7:00pm",
+      "cabinet_meeting": "Third Wednesday, 9:30am",
+      "precincts": [
+        {
+          "id": "71",
+          "phone": "718-735-0511"
+        }
+      ]
+    },
+    "10 BROOKLYN": {
+      "neighborhoods": "Bay Ridge, Dyker Heights, and Fort Hamilton",
+      "address": "8119 5th Avenue, Brooklyn, New York 11209",
+      "phone": "718-745-6827",
+      "email": "communitybd10@nyc.rr.com",
+      "website": "http://www.bkcb10.org/",
+      "chair": "Joanne Seminara",
+      "district_manager": "Josephine Beckmann",
+      "board_meeting": "Third Monday except January and February, 7:15pm",
+      "cabinet_meeting": "Per agenda",
+      "precincts": [
+        {
+          "id": "68",
+          "phone": "718-439-4211"
+        }
+      ]
+    },
+    "11 BROOKLYN": {
+      "neighborhoods": "Bath Beach, Gravesend, Mapleton, and Bensonhurst",
+      "address": "2214 Bath Avenue, Brooklyn, NY 11214",
+      "phone": "718-266-8800",
+      "email": "info@brooklyncb11.org",
+      "website": "http://www.brooklyncb11.org/",
+      "chair": "William Guarinello",
+      "district_manager": "Marnee Elias-Pavia",
+      "board_meeting": "Second Thursday, 7:30pm",
+      "cabinet_meeting": "Per agenda",
+      "precincts": [
+        {
+          "id": "62",
+          "phone": "718-236-2611"
+        }
+      ]
+    },
+    "12 BROOKLYN": {
+      "neighborhoods": "Boro Park, Kensington, Ocean Parkway, and Midwood",
+      "address": "5910 13th Avenue, Brooklyn, NY 11219",
+      "phone": "718-851-0800",
+      "email": "BKCB12@gmail.com",
+      "website": "http://www.brooklyncb12.org",
+      "chair": "Yidel Perlstein",
+      "district_manager": "Wolf Sender",
+      "board_meeting": "Fourth Tuesday, 7:00pm",
+      "cabinet_meeting": "Third Tuesday of every other month, 9:30am",
+      "precincts": [
+        {
+          "id": "66",
+          "phone": "718-851-5611"
+        }
+      ]
+    },
+    "13 BROOKLYN": {
+      "neighborhoods": "Coney Island, Brighton Beach, Bensonhurst, Gravesend, and Seagate",
+      "address": "1201 Surf Avenue, 3rd Floor, Brooklyn, NY 11224",
+      "phone": "718-266-3001",
+      "email": "churei@aol.com",
+      "website": "http://brooklyncb13.org/",
+      "chair": "Eddie Mark",
+      "district_manager": "Chuck Reichenthal",
+      "board_meeting": "Fourth Wednesday, 7:00pm",
+      "cabinet_meeting": "First Thursday, 9:30am",
+      "precincts": [
+        {
+          "id": "60",
+          "phone": "718-946-3311"
+        }
+      ]
+    },
+    "14 BROOKLYN": {
+      "neighborhoods": "Flatbush, Midwood, Kensington, and Ocean Parkway",
+      "address": "810 East 16th Street, Brooklyn, NY 11230-3010",
+      "phone": "718-859-6357",
+      "email": "info@cb14brooklyn.com",
+      "website": "http://www.cb14brooklyn.com",
+      "chair": "Alvin M. Berk",
+      "district_manager": "Shawn Campbell",
+      "board_meeting": "Second Monday, 7:30pm",
+      "cabinet_meeting": "First Wednesday of every other month, 11:00am",
+      "precincts": [
+        {
+          "id": "70",
+          "phone": "718-851-5511"
+        }
+      ]
+    },
+    "15 BROOKLYN": {
+      "neighborhoods": "Sheepshead Bay, Manhattan Beach, Kings Bay, Gerritsen Beach, Kings Highway, East Gravesend, Madison, Homecrest, and Plum Beach",
+      "address": "Kingsboro Community College, 2001 Oriental Boulevard, C Cluster, Room C124, Brooklyn, NY 11235",
+      "phone": "718-332-3008",
+      "email": "bklcb15@verizon.net",
+      "website": "http://www.nyc.gov/brooklyncb15",
+      "chair": "Theresa Scavo",
+      "district_manager": "Pearl Burg",
+      "board_meeting": "Last Tuesday, 7:00pm",
+      "cabinet_meeting": "Third Thursday, 9:30am",
+      "precincts": [
+        {
+          "id": "61",
+          "phone": "718-627-6611"
+        }
+      ]
+    },
+    "16 BROOKLYN": {
+      "neighborhoods": "Brownsville and Ocean Hill",
+      "address": "444 Thomas Boyland Street, Rm. 103, Brooklyn, NY 11212",
+      "phone": "718-385-0323",
+      "email": "bk16@cb.nyc.gov",
+      "website": "http://www.brooklyncb16.org/",
+      "chair": "Bettie M. Kollock-Wallace",
+      "district_manager": "Viola D. Greene-Walker",
+      "board_meeting": "Fourth Tuesday, 7:00pm",
+      "cabinet_meeting": "Second Wednesday, 9:30am",
+      "precincts": [
+        {
+          "id": "73",
+          "phone": "718-495-5411"
+        }
+      ]
+    },
+    "17 BROOKLYN": {
+      "neighborhoods": "East Flatbush, Remsen Village, Farragut, Rugby, Erasmus and Ditmas Village",
+      "address": "39 Remsen Avenue, Brooklyn, NY 11212",
+      "phone": "718-467-3536",
+      "email": "bkbrd17a@optonline.net",
+      "website": "",
+      "chair": "Robert Antoine",
+      "district_manager": "Sherif Fraser",
+      "board_meeting": "Third Wednesday, 7:00pm",
+      "cabinet_meeting": "Per agenda",
+      "precincts": [
+        {
+          "id": "67",
+          "phone": "718-287-3211"
+        }
+      ]
+    },
+    "18 BROOKLYN": {
+      "neighborhoods": "Canarsie, Bergen Beach, Mill Basin, Flatlands, Marine Park, Georgetown, and Mill Island",
+      "address": "1097 Bergen Avenue, Brooklyn, NY 11234-4841",
+      "phone": "718-241-0422",
+      "email": "bkbrd18@optonline.net",
+      "website": "",
+      "chair": "Saul Needle",
+      "district_manager": "Dorothy Turano",
+      "board_meeting": "Third Wednesday, 8:00pm",
+      "cabinet_meeting": "Per agenda",
+      "precincts": [
+        {
+          "id": "63",
+          "phone": "718-258-4411"
+        },
+        {
+          "id": "69",
+          "phone": "718-257-6211"
+        }
+      ]
+    }
+  }
+]

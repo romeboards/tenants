@@ -1,0 +1,20 @@
+<!-- <section data-ng-controller="IndexController"> -->
+<section>
+  <div class="jumbotron">
+    <div class="main">
+
+      <div data-ng-show="taxinfo">
+        <h3>Property Tax Information</h3>
+        <div><b>Last Assessment Year</b> {{taxinfo.YEAR}}</div>
+        <div><b>Block Number</b> {{taxinfo.BLOCK}}</div>
+        <div><b>Lot Number</b> {{taxinfo.LOT}}</div>
+        <div><b>Tax Class</b> {{taxinfo.TAXCLASS}}</div>
+        <div><b>Market Value</b> ${{taxinfo.FULLVAL | number }}</div>
+        <div data-ng-show="taxinfo.AVLAND"><b>Actual Land Value</b> ${{taxinfo.AVLAND | number }}</div>
+        <div data-ng-show="taxinfo.AVTOT"><b>Actual Total Value</b> ${{taxinfo.AVLAND | number }}</div>
+        <div><b>Registered Property Owner</b> {{taxinfo.OWNER}}</div>
+      </div>  
+         
+    </div>
+  </div>  
+</section>

@@ -1,0 +1,16 @@
+<h3 class="header-title text-muted">easy building info</h3>
+<div class="addr-search pull-right">
+  <form data-ng-submit="searchReqs()">
+    <input data-ng-model="streetNumber" placeholder="street number">
+    <input data-ng-model="streetName" placeholder="street name">
+    <input type="submit">
+  </form> 
+</div>   
+<nav>
+  <ul class="nav nav-tabs">
+    <li data-ng-class="{active:isActiveTab(0)}"><a href="#!/home">General Info</a></li>
+    <li data-ng-class="{active:isActiveTab(1)}"><a href="#!/issues">Issues</a></li>
+    <li data-ng-class="{active:isActiveTab(2)}"><a href="#!/registrations">Registrations</a></li>
+    <li data-ng-class="{active:isActiveTab(3)}"><a href="#!/other">Other</a></li>     
+  </ul>
+</nav>

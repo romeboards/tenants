@@ -1,0 +1,15 @@
+<!-- <section data-ng-controller="IndexController"> -->
+<section>
+  <div class="jumbotron">
+    <div class="main">
+    
+      <div data-ng-show="communityBoard">
+        <h3>Community Board Information</h3>
+        <div data-ng-repeat="(k,v) in communityBoardInfo">
+          <b>{{k}}</b>  {{v}}
+        </div>
+      </div>
+
+    </div>
+  </div>  
+</section>

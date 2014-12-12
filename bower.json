@@ -1,0 +1,26 @@
+{
+    "name": "tenants",
+    "version": "0.0.1",
+    "dependencies": {
+        "jquery": "~1.9.1",
+        
+        "sass-bootstrap": "~3.0.0",
+        "angular": "latest",
+        "angular-resource": "latest",
+        "angular-cookies": "latest",
+        "angular-mocks": "latest",
+        "angular-route": "latest",
+        "angular-bootstrap": "0.10.0",
+        "angular-ui-router": "#master"
+    },
+    "exportsOverride": {
+        "bootstrap": {
+            "css": "docs/assets/css/bootstrap*.css",
+            "js": "docs/assets/js/bootstrap.js",
+            "img": "docs/assets/img/glyphicons-halflings*.png"
+        },
+        "angular-ui-utils": {
+            "modules": "modules/route/route.js"
+        }
+    }
+}
