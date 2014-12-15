@@ -9,16 +9,119 @@
  */
 
 angular.module('mean')
-	.factory('Address', ['$http', function Address($http) {
+	.factory('Address', ['$http', '$q', function Address($http, $q) {
 
-		var ext_api_threeoneone = 'http://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
-		var ext_api_codeviolations = 'http://data.cityofnewyork.us/resource/wvxf-dwi5.json';
-		var int_api_taxinfo = 'blding/taxes/';
+		var dob_threeoneone = 'http://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
+		var hpd_codeviolations = 'http://data.cityofnewyork.us/resource/wvxf-dwi5.json';
+    var hpd_registrations = 'https://data.cityofnewyork.us/resource/tesw-yqqr.json';
+    var hpd_contacts = 'https://data.cityofnewyork.us/resource/feu5-w2e2.json';
+
+
+		var api_taxinfo = 'api/blding/taxes/';
+    var api_bbl = 'api/blding/bbl/';
+    var api_addr = 'api/blding/addr/';
 		var boards = 'data/boards.json';
 
+    /* private functions */
+    function getBBLFromAddr(addr) {
+      var deferred = $q.defer();
+
+      var req_url = api_bbl + addr;
+
+      $http.get(req_url)
+        .success(function(data) { deferred.resolve(data); })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise;       
+    }
+
+    function getAddrFromBBL(boro, block, lot) {
+      var deferred = $q.defer();
+
+      var req_url = api_bbl + boro + '/' + block + '/' + lot;
+
+      $http.get(req_url)
+        .success(function(data) { deferred.resolve(data); })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise;          
+    }
+
+    function getHPDRegistrationID(boro, block, lot) {
+      var deferred = $q.defer();
+
+      var req_url = hpd_registrations + '?boroid=' + boro + '&block=' + block + '&lot=' + lot;
+
+      $http.get(req_url)
+        .success(function(data) { deferred.resolve(data); })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise;      
+    }
+
+    function getRegistrationFromID(regID) {
+      var deferred = $q.defer();
+
+      var req_url = hpd_registrations + '?registrationid=' + regID;
+
+      $http.get(req_url)
+        .success(function(data) { deferred.resolve(data); })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise; 
+    }
+
+    /* 
+      given: RegistrationID 
+      returns: ARRAY with different types of owners
+
+      different types are: "IndividualOwner", "CorporateOwner", "Agent", "HeadOfficer", "Officer", "Shareholder"
+    */  
+    function getHPDContacts(regID) {
+      var deferred = $q.defer();
+
+      var req_url = hpd_contacts + '?registrationid=' + regID;
+
+      $http.get(req_url)
+        .success(function(data) { deferred.resolve(data); })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise;
+    }
+
+    function getOwnersFromBusinessAddr(number,street,zip) {
+      var deferred = $q.defer();
+
+      var req_url = hpd_contacts + '?businesshousenumber=' + number + '&businessstreetname=' + street + '&businesszip=' + zip;
+
+      $http.get(req_url)
+        .success(function(data) { 
+          deferred.resolve(data); 
+        })
+        .error(function() { deferred.reject(); });
+
+      return deferred.promise;      
+    }
+
+    /* gets a list of owners, returns an array of unique regids */
+    function filterRegIDsFromOwners(owners) {
+      var regids = [];
+      for(var i = 0; i < owners.length; i++) {
+        var id = owners[i].registrationid;
+        //console.log(id, regids.indexOf(id));
+        if(regids.indexOf(id) === -1) {
+          //console.log('add', id);
+          regids.push(id);
+        }
+        //else console.log('repeat', id);
+      }
+      return regids;
+    }
+
+    /* public functions */
 		return {
 			getThreeOneOne: function(addr, callback) {
-				$http.get(ext_api_threeoneone, { params: { incident_address: addr }})
+				$http.get(dob_threeoneone, { params: { incident_address: addr }})
 					.success(function(data, status, headers, config) {
 						callback(data, null);
 					})
@@ -36,7 +139,7 @@ angular.module('mean')
 					});				
 			},
 			getCodeViolations: function(streetNumber, streetName, callback) {
-				$http.get(ext_api_codeviolations, { params: { housenumber: streetNumber, streetname: streetName }})
+				$http.get(hpd_codeviolations, { params: { housenumber: streetNumber, streetname: streetName }})
 					.success(function(data, status, headers, config) {
 						callback(data, null);
 					})
@@ -46,7 +149,7 @@ angular.module('mean')
 			},
 			getTaxInfo: function(addr, callback) {
 
-				$http.get(int_api_taxinfo + addr)
+				$http.get(api_taxinfo + addr)
 					.success(function(data, status, headers, config) {
 						callback(data, null);
 					})
@@ -54,8 +157,42 @@ angular.module('mean')
 						console.log(e);
 						callback(null, e);
 					});
-			}
-		};
+			},
+      getBuildingOwners: function(addr, callback) {
+
+        getBBLFromAddr(addr)
+        .then(function (bbl) {
+          return getHPDRegistrationID(bbl[0].boro, bbl[0].block, bbl[0].lot);
+        })
+        .then(function (registration) {
+          return getHPDContacts(registration[0].registrationid);
+        })
+        .then(function (contacts) {
+          callback(contacts);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+      },
+      getBuildingsFromBusinessAddr: function(owner, callback) {           //callback is called for every regid found
+
+        var housenumber = owner.businesshousenumber,
+            streetname = owner.businessstreetname,
+            zip = owner.businesszip;
+
+        getOwnersFromBusinessAddr(housenumber,streetname,zip)
+        .then(function (owners) {
+
+            var regids = filterRegIDsFromOwners(owners);
+
+            regids.forEach(function(regid) {
+              getRegistrationFromID(regid).then(function (registration) {
+                callback(registration[0]);
+              });
+            });
+        })
+      }
+    }
 
                
 

@@ -15,6 +15,29 @@
         <div><b>Registered Property Owner</b> {{taxinfo.OWNER}}</div>
       </div>  
          
+      <div data-ng-show="owners">
+        <h3>Registered Owners</h3>
+        <table class="table">
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Business Address</th>
+          </tr>
+          <tr data-ng-repeat="owner in owners" >
+            <td>{{ owner.type }}</td>
+            <td>{{ owner.type == "CorporateOwner" ? owner.corporationname : owner.firstname + ' ' + owner.lastname }}</td>
+            <td data-ng-click="findOtherBuildings(owner)">{{ owner.businesshousenumber + ' ' + owner.businessstreetname + ' #' + owner.businessapartment + ' ' + owner.businesscity + ' ' + owner.businesszip }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div data-ng-show="otherbuildings">
+        <h3>Other properties registered under this Business Address ({{ otherbuildings.length }} properties)</h3><a data-toggle="collapse" data-target="#otherBuildingsList">collapse</a>
+        <ul id="otherBuildingsList" class="collapse in">
+          <li data-ng-repeat="building in otherbuildings">{{ building.housenumber + ' ' + building.streetname }}</li>
+        </ul>
+      </div>
+
     </div>
   </div>  
 </section>

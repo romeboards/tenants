@@ -13,12 +13,23 @@ angular.module('mean.system').controller('RegController', ['$rootScope','$scope'
   			  if(error) {
   			    console.error(error);
   			  } else {
-  			  	console.log(data[0]);
+  			  	//console.log(data[0]);
   			    $scope.taxinfo = data[0];
   			  } 
   		});
 
+      Address.getBuildingOwners($scope.addr, function(owners) {
+        $scope.otherbuildings = [];
+        $scope.owners = owners;
+      });
+
   	}
   });		
+
+  $scope.findOtherBuildings = function(owner) {
+    Address.getBuildingsFromBusinessAddr(owner, function(registration) {
+      $scope.otherbuildings.push(registration);
+    });
+  };
 
 }]);
