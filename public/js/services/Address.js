@@ -24,52 +24,30 @@ angular.module('mean')
 		var boards = 'data/boards.json';
 
     /* private functions */
-    function getBBLFromAddr(addr) {
+    var request = function(url) {
       var deferred = $q.defer();
 
-      var req_url = api_bbl + addr;
-
-      $http.get(req_url)
+      $http.get(url)
         .success(function(data) { deferred.resolve(data); })
         .error(function() { deferred.reject(); });
 
-      return deferred.promise;       
+      return deferred.promise;         
     }
 
-    function getAddrFromBBL(boro, block, lot) {
-      var deferred = $q.defer();
-
-      var req_url = api_bbl + boro + '/' + block + '/' + lot;
-
-      $http.get(req_url)
-        .success(function(data) { deferred.resolve(data); })
-        .error(function() { deferred.reject(); });
-
-      return deferred.promise;          
+    var getBBLFromAddr = function(addr) {
+      return request(api_bbl + addr);    
     }
 
-    function getHPDRegistrationID(boro, block, lot) {
-      var deferred = $q.defer();
-
-      var req_url = hpd_registrations + '?boroid=' + boro + '&block=' + block + '&lot=' + lot;
-
-      $http.get(req_url)
-        .success(function(data) { deferred.resolve(data); })
-        .error(function() { deferred.reject(); });
-
-      return deferred.promise;      
+    var getAddrFromBBL = function(boro, block, lot) {
+      return request(api_bbl + boro + '/' + block + '/' + lot);         
     }
 
-    function getRegistrationFromID(regID) {
-      var deferred = $q.defer();
+    var getHPDRegistrationID = function(boro, block, lot) {
+      return request(hpd_registrations + '?boroid=' + boro + '&block=' + block + '&lot=' + lot);    
+    }
 
-      var req_url = hpd_registrations + '?registrationid=' + regID;
-
-      $http.get(req_url)
-        .success(function(data) { deferred.resolve(data); })
-        .error(function() { deferred.reject(); });
-
-      return deferred.promise; 
+    var getRegistrationFromID = function(regID) {
+      return request(hpd_registrations + '?registrationid=' + regID);
     }
 
     /* 
@@ -78,34 +56,17 @@ angular.module('mean')
 
       different types are: "IndividualOwner", "CorporateOwner", "Agent", "HeadOfficer", "Officer", "Shareholder"
     */  
-    function getHPDContacts(regID) {
-      var deferred = $q.defer();
-
-      var req_url = hpd_contacts + '?registrationid=' + regID;
-
-      $http.get(req_url)
-        .success(function(data) { deferred.resolve(data); })
-        .error(function() { deferred.reject(); });
-
-      return deferred.promise;
+    var getHPDContacts = function(regID) {
+      return request(hpd_contacts + '?registrationid=' + regID);
     }
 
-    function getOwnersFromBusinessAddr(number,street,zip) {
-      var deferred = $q.defer();
-
-      var req_url = hpd_contacts + '?businesshousenumber=' + number + '&businessstreetname=' + street + '&businesszip=' + zip;
-
-      $http.get(req_url)
-        .success(function(data) { 
-          deferred.resolve(data); 
-        })
-        .error(function() { deferred.reject(); });
-
-      return deferred.promise;      
+    var getOwnersFromBusinessAddr = function(number,street,zip) {
+      return request(hpd_contacts + '?businesshousenumber=' + number + '&businessstreetname=' + street + '&businesszip=' + zip);    
     }
+
 
     /* gets a list of owners, returns an array of unique regids */
-    function filterRegIDsFromOwners(owners) {
+    var filterRegIDsFromOwners = function(owners) {
       var regids = [];
       for(var i = 0; i < owners.length; i++) {
         var id = owners[i].registrationid;

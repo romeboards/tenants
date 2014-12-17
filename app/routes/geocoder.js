@@ -15,9 +15,13 @@ exports.geocode = function() {
   return function(req, res) {
 
     var _addr = req.params.addr;
+    console.log('TRYING', _addr);
     geocoder.geocode(_addr, function(err, _res) {
-      if(err) console.log(err);
-      res.json(_res);
+      if(err) console.log(err, _addr);
+      else {
+        console.log('RETURNING', _res[0].streetNumber + ' ' + _res[0].streetName);
+        res.json(_res);
+      }
     });
   }
 };
