@@ -20,6 +20,7 @@ angular.module('mean')
 		var api_taxinfo = 'api/blding/taxes/';
     var api_bbl = 'api/blding/bbl/';
     var api_addr = 'api/blding/addr/';
+    var api_geocode = 'api/geocode/';
 		var boards = 'data/boards.json';
 
     /* private functions */
@@ -108,18 +109,22 @@ angular.module('mean')
       var regids = [];
       for(var i = 0; i < owners.length; i++) {
         var id = owners[i].registrationid;
-        //console.log(id, regids.indexOf(id));
-        if(regids.indexOf(id) === -1) {
-          //console.log('add', id);
-          regids.push(id);
-        }
-        //else console.log('repeat', id);
+        if(regids.indexOf(id) === -1) regids.push(id);
       }
       return regids;
     }
 
     /* public functions */
 		return {
+      getLatLng: function(addr, callback) {
+        $http.get(api_geocode + addr)
+          .success(function(data, status, headers, config) {
+            callback(data, null);
+          })
+          .error(function (e) {
+            callback(null, e);
+          });            
+      },    
 			getThreeOneOne: function(addr, callback) {
 				$http.get(dob_threeoneone, { params: { incident_address: addr }})
 					.success(function(data, status, headers, config) {
@@ -148,7 +153,6 @@ angular.module('mean')
 					});
 			},
 			getTaxInfo: function(addr, callback) {
-
 				$http.get(api_taxinfo + addr)
 					.success(function(data, status, headers, config) {
 						callback(data, null);

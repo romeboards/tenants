@@ -7660,3 +7660,9 @@ body {
 .addr-search {
   margin-top: 4px;
 }
+
+/* line 31, ../../app/styles/app.scss */
+#map {
+  width: 100%;
+  height: 50vh;
+}

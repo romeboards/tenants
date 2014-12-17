@@ -37,7 +37,8 @@
         "forever": "latest",
         "grunt": "latest",
         "grunt-cli": "latest",
-        "mongoskin": "latest"
+        "mongoskin": "latest",
+        "node-geocoder": "latest"
     },
     "devDependencies": {
         "supertest": "latest",

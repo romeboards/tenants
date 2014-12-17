@@ -32,12 +32,12 @@
       </div>
 
       <div data-ng-show="otherbuildings">
-        <h3>Other properties registered under this Business Address ({{ otherbuildings.length }} properties)</h3><a data-toggle="collapse" data-target="#otherBuildingsList">collapse</a>
-        <ul id="otherBuildingsList" class="collapse in">
-          <li data-ng-repeat="building in otherbuildings">{{ building.housenumber + ' ' + building.streetname }}</li>
-        </ul>
+        <h3>Other properties registered under this Business Address ({{ otherbuildings.length }} properties)</h3>
       </div>
+      <div id="map"></div>
 
     </div>
   </div>  
 </section>
+<!-- <script type="text/javascript-lazy" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwGBCr666OkgCODVFLwUZhwT9W9qLEHFo"></script> -->
+ <!-- <lazy-load></lazy-load> -->
