@@ -26,15 +26,16 @@
           <tr data-ng-repeat="owner in owners" >
             <td>{{ owner.type }}</td>
             <td>{{ owner.type == "CorporateOwner" ? owner.corporationname : owner.firstname + ' ' + owner.lastname }}</td>
-            <td data-ng-click="findOtherBuildings(owner)">{{ owner.businesshousenumber + ' ' + owner.businessstreetname + ' #' + owner.businessapartment + ' ' + owner.businesscity + ' ' + owner.businesszip }}</td>
+            <td data-ng-click="selectOwner(owner)">{{ owner.businesshousenumber + ' ' + owner.businessstreetname + ' #' + owner.businessapartment + ' ' + owner.businesscity + ' ' + owner.businesszip }}</td>
           </tr>
         </table>
       </div>
 
-      <div data-ng-show="otherbuildings">
-        <h3>Other properties registered under this Business Address ({{ otherbuildings.length }} properties)</h3>
+      <div data-ng-show="otherBuildings">
+        <h3>Other properties registered under this Business Address ({{ otherBuildings.length }} properties)</h3>
       </div>
-      <div id="map"></div>
+
+      <registrations-map owner="selectedOwner" buildings="otherBuildings"></registrations-map>
 
     </div>
   </div>  

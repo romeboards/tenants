@@ -7662,7 +7662,7 @@ body {
 }
 
 /* line 31, ../../app/styles/app.scss */
-#map {
+registrations-map .map {
   width: 100%;
   height: 50vh;
 }
