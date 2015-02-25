@@ -8,24 +8,50 @@ angular.module('mean.system').controller('IndexController', ['$rootScope','$scop
 
   	if($rootScope.addr && $rootScope.addr.length) {
 
-  		Address.getThreeOneOne($scope.addr, function(data, error) {
+      Address.getGeosupport($scope.streetNumber, $scope.streetName, function (data, error) {
 
-  			if(error) {
-  				console.error(error);
-  			} else {
-  				$rootScope.requests = data;
-  				$scope.communityBoard = data[0].community_board;
+        if(error) console.log(error);
+        else {
+          //console.log('geosupport', data);
 
-          console.log($scope.communityBoard);
+          $scope.geosupport = data;
+          $scope.communityBoard = data.communityDistrictNumber;
 
-  				Address.getCommunityBoard($scope.communityBoard, function(data, error) {
-  					if(error) console.error(error);
+          Address.getCommunityBoard($scope.communityBoard, function(data, error) {
+            if(error) console.error(error);
+            $scope.communityBoardInfo = data;
+          });
+        }
 
-  					$scope.communityBoardInfo = data;
-  				});
-  			}
+      }); //end getGeosupport
 
-  		}); //end getThreeOneOne
+      Address.getRentStabilization($scope.streetNumber, $scope.streetName, function (data, error) {
+
+        if(error) console.log(error);
+        else if (data[0]) { 
+          $scope.rentstabilization = data[0];
+
+          if($scope.rentstabilization.STATUS1.length) {
+            Address.getDHCRGlossary($scope.rentstabilization.STATUS1, function(data, error) {
+              if(error) console.error(error);
+              $scope.rentstabilization.STATUS1INFO = data;
+            });              
+          }
+          if($scope.rentstabilization.STATUS2.length) {
+            Address.getDHCRGlossary($scope.rentstabilization.STATUS2, function(data, error) {
+              if(error) console.error(error);
+              $scope.rentstabilization.STATUS2INFO = data;
+            });    
+          }
+          if($scope.rentstabilization.STATUS3.length) {
+            Address.getDHCRGlossary($scope.rentstabilization.STATUS3, function(data, error) {
+              if(error) console.error(error);
+              $scope.rentstabilization.STATUS3INFO = data;
+            });    
+          }     
+        }
+      });
+
   	}
   });		
 

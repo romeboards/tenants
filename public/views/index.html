@@ -2,13 +2,35 @@
 <section>
   <div class="jumbotron">
     <div class="main">
-    
+ 
+       <div data-ng-show="geosupport">
+        <h3>General Information</h3>
+        <p><b>Assembly District:</b>  {{geosupport.assemblyDistrict}}</p>
+        <p><b>City Council District:</b>  {{geosupport.communitySchoolDistrict}}</p>
+        <p><b>School District:</b>  {{geosupport.cityCouncilDistrict}}</p>
+        <p><b>Recycling Days:</b>  {{geosupport.sanitationRecyclingCollectionSchedule}}</p>
+        <p><b>Garbage Days:</b>  {{geosupport.sanitationRegularCollectionSchedule}}</p>
+        <p><b>Bourough Code:</b>  {{geosupport.bblBoroughCode}}</p>
+        <p><b>Block Number:</b>  {{geosupport.bblTaxBlock}}</p>
+        <p><b>Lot Number:</b>  {{geosupport.bblTaxLot}}</p>
+      </div>  
+
+      <div data-ng-show="rentstabilization">
+        <h3>Rent Stabilization Information</h3>
+        <p data-ng-show="rentstabilization.STATUS1"><b>Status 1:</b>  {{rentstabilization.STATUS1}}</p>
+        <p data-ng-show="rentstabilization.STATUS1INFO"><b>What does this mean?</b>  {{rentstabilization.STATUS1INFO}}</p>
+        <p data-ng-show="rentstabilization.STATUS2"><b>Status 2:</b>  {{rentstabilization.STATUS2}}</p>
+        <p data-ng-show="rentstabilization.STATUS2INFO"><b>What does this mean?</b>  {{rentstabilization.STATUS2INFO}}</p>
+        <p data-ng-show="rentstabilization.STATUS3"><b>Status 3:</b>  {{rentstabilization.STATUS3}}</p>
+        <p data-ng-show="rentstabilization.STATUS3INFO"><b>What does this mean?</b>  {{rentstabilization.STATUS3INFO}}</p>
+      </div>  
+
       <div data-ng-show="communityBoard">
-        <h3>Community Board Information</h3>
+        <h3>Community Board {{geosupport.communityDistrictNumber}} Information</h3>
         <div data-ng-repeat="(k,v) in communityBoardInfo">
           <b>{{k}}</b>  {{v}}
         </div>
-      </div>
+      </div>    
 
     </div>
   </div>  

@@ -1,5 +1,6 @@
 'use strict';
 
+// eventually going to move this to ACRIS
 exports.findTaxes = function() {
 	return function(req, res) {
 
@@ -12,6 +13,8 @@ exports.findTaxes = function() {
 	}
 };
 
+
+// this is defunct, switching to just using Geoclient API clientside
 exports.findBBL = function() {
 	return function(req, res) {
 
@@ -24,7 +27,7 @@ exports.findBBL = function() {
 	}
 };
 
-
+// this is defunct, switching to just using Geoclient API clientside
 exports.findAddr = function() {
   return function(req, res) {
 
@@ -34,6 +37,22 @@ exports.findAddr = function() {
     var db = req.db;
 
     db.collection('blocklot').find({ boro : _boro, block : _block, lot : _lot }).toArray(function (err, items) {
+       res.json(items);
+    });
+  }
+};
+
+exports.findDHCR = function() {
+  return function(req, res) {
+
+    var _boro = req.params.boro;
+    var _block = req.params.block;
+    var _lot = req.params.lot;
+    var db = req.db;
+
+    // just starting with brooklyn
+   // db.collection('dhcr').find({ boro : _boro, block : _block, lot : _lot }).toArray(function (err, items) {
+    db.collection('dhcr').find({ BLOCK : _block, LOT : _lot }).toArray(function (err, items) {
        res.json(items);
     });
   }

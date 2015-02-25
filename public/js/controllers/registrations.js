@@ -13,7 +13,7 @@ angular.module('mean.system').controller('RegController', ['$rootScope','$scope'
         else $scope.taxinfo = data[0]; 
       });
 
-      Address.getBuildingOwners($scope.addr, function(owners) {
+      Address.getBuildingOwners($scope.streetNumber, $scope.streetName, function(owners) {
         $scope.otherBuildings = [];
         $scope.owners = owners;
       });

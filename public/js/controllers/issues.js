@@ -14,13 +14,6 @@ angular.module('mean.system').controller('IssuesController', ['$rootScope','$sco
   				console.error(error);
   			} else {
   				$rootScope.requests = data;
-  				$scope.communityBoard = data[0].community_board;
-
-  				Address.getCommunityBoard($scope.communityBoard, function(data, error) {
-  					if(error) console.error(error);
-
-  					$scope.communityBoardInfo = data;
-  				});
   			}
   		}); //end getThreeOneOne
 

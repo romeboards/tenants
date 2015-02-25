@@ -6,11 +6,14 @@ module.exports = function(app) {
   var index = require('../app/controllers/index');
   var bldings = require('../app/routes/blding');
   var geocoder = require('../app/routes/geocoder');
+  var geoclient = require('../app/routes/geoclient');
 
   app.get('/', index.render);
 
   app.get('/api/blding/taxes/:addr', bldings.findTaxes());
-  app.get('/api/blding/bbl/:addr', bldings.findBBL());
   app.get('/api/blding/addr/:boro/:block/:lot', bldings.findAddr());
+  app.get('/api/blding/dhcr/:boro/:block/:lot', bldings.findDHCR());
   app.get('/api/geocode/:addr', geocoder.geocode());
+  app.get('/api/geoclient/:number/:street', geoclient.getGeosupport());
+  app.get('/api/geoclient/bbl/:number/:street', geoclient.getGeosupportBBL());  
 };

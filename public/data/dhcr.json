@@ -1,0 +1,43 @@
+[
+  {
+    "MULTIPLE DWELLING A" : {
+      "info" : "As defined under the Multiple Dwelling Law, a multiple dwelling building which is generally occupied as a permanent residence. The class includes such buildings as apartment houses, apartment hotels, maisonette apartments, and all other multiple dwellings except class B dwellings."
+    },
+    "MULTIPLE DWELLING B" : {
+      "info" : "A multiple dwelling which is occupied, as a rule, transiently, as the more or less temporary abode of individuals or families. This class includes such buildings as hotels, lodging houses, single room occupancies, boarding schools, furnished room houses, college and school dormitories."
+    },
+    "HOTEL" : {
+      "info" : "Under rent stabilization, a multiple dwelling which provides all of the following services included in the rent:<br />1. Maid service, consisting of general house-cleaning at a frequency of at least once a week;<br/>2. Linen service, consisting of providing clean linens at a frequency of at least once a week;<br />3. Furniture and furnishings, including at a minimum a bed, lamp, storage facilities for clothing, chair and mirror in a bedroom; such furniture to be maintained by the hotel owner in reasonable condition; and<br />4. Lobby staffed 24 hours a day, seven days a week by at least one employee.<br />Under rent control, any establishment which on March 1, 1950 was and still is commonly regarded as a hotel, and which customarily provides hotel services such as maid service, furnishing and laundering of linen, telephone and secretarial or desk use and upkeep of furniture and fixtures, and bellboy service; provided, however, that the term hotel shall not include any establishment which is commonly regarded in the city as a single room occupancy."
+    },
+    "SRO" : {
+      "info" : "Residential properties in which some or all dwelling units do not contain bathroom or kitchen facilities.<br />Under rent control, the occupancy by one or two persons of a single room, or of two or more rooms which are joined together, separated from all other rooms within an apartment in a multiple dwelling, so that the occupant or occupants thereof reside separately and independently of the other occupant or occupants of the same apartment."
+    },
+    "GARDEN COMPLEX" : {
+      "info" : "Such complexes may consist of attached, detached, or semi-attached dwelling units, containing six or more housing accommodations having common facilities such as a sewer line, water main, or heating plant and operated as a unit under common ownership. They are subject to regulation even though Certificates of Occupancy were issued for portions of the complex as one or two family dwellings."
+    },
+    "NON-EVICT COOP/CONDO" : {
+      "info" : "A building that has become a cooperative or a condominium without the right to evict any non-purchasing tenants."
+    },
+    "EVICT COOP/CONDO" : {
+      "info" : "A building that has become a cooperative or a condominium with the right to evict non-purchasing tenants other than eligible senior citizens or eligible disabled tenants within a specified period of time."
+    },
+    "COOP/CONDO PLAN FILE" : {
+      "info" : "A Coop/Condo conversion plan has been accepted for filing by the Attorney General's office."
+    },
+    "J-51" : {
+      "info" : "A program governed by Sections 11-243 and 11-244 of the New York City Administrative Code (formerly numbered J-51) under which, in order to encourage development and rehabilitation property tax abatements and exemptions are granted. In consideration of receiving these tax abatements and at least for the duration of the abatements, the owner of these buildings agrees to place under rent stabilization, those apartments which would not otherwise be subject to rent stabilization (e.g., those in buildings with fewer than 6 apartments or buildings constructed after 12/31/73).<br />This program provides real estate tax exemptions and abatements to existing residential buildings which are renovated or rehabilitated in ways which conform to the requirements of the statute. It also provides these benefits to residential buildings which were converted from commercial structures."
+    },
+    "421-A" : {
+      "info" : "Under this section of the Real Property Tax Law, new multiple dwellings in New York City receive, under certain conditions, property tax abatements. For the duration of the abatements, at least, the apartments are rent regulated. This program provides real estate tax exemptions and abatements to newly constructed units."
+    },
+    "ARTICLE 11" : {
+      "info" : "Under this article of the Private Housing Finance Law, buildings are required to register their rent regulated apartments."
+    },
+    "ARTICLES 14 & 15" : {
+      "info" : "Under this article of the Private Housing Finance Law, buildings are required to register their rent regulated apartments."
+    },
+    "SEC 608" : {
+      "info" : "Under this article of the Private Housing Finance Law, buildings are required to register their rent regulated apartments."
+    }    
+  }
+]
