@@ -11,8 +11,8 @@
 angular.module('mean')
 .factory('Address', ['$http', '$q', function Address($http, $q) {
 
-    var dob_threeoneone = 'http://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
-    var hpd_codeviolations = 'http://data.cityofnewyork.us/resource/wvxf-dwi5.json';
+    var dob_threeoneone = 'https://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
+    var hpd_codeviolations = 'https://data.cityofnewyork.us/resource/wvxf-dwi5.json';
     var hpd_registrations = 'https://data.cityofnewyork.us/resource/tesw-yqqr.json';
     var hpd_contacts = 'https://data.cityofnewyork.us/resource/feu5-w2e2.json';
 
