@@ -1,1 +1,1 @@
-web: grunt --force
+web: forever start server.js
