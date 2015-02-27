@@ -2,6 +2,9 @@
 
 angular.module('mean.system').controller('NavCtrl', ['$rootScope','$scope', function ($rootScope, $scope) {
 
+  $scope.streetNumber = '1045';
+  $scope.streetName = 'Union Street';
+
 
 		$scope.isActiveTab = function(tab) {
 			return tab == $rootScope.state;

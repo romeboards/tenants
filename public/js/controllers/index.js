@@ -3,6 +3,13 @@
 angular.module('mean.system').controller('IndexController', ['$rootScope','$scope', '$http', 'Address', function ($rootScope, $scope, $http, Address) {
 
   $rootScope.state = 0;
+  $scope.streetNumber = '1045';
+  $scope.streetName = 'Union Street';
+  $rootScope.addr = $scope.streetNumber + ' ' + $scope.streetName;
+  $rootScope.addr = $rootScope.addr.toUpperCase();
+  $rootScope.streetName = $scope.streetName;
+  $rootScope.streetNumber = $scope.streetNumber;
+
 
   $scope.$watch(function(){ return $rootScope.addr }, function(val) {	
 
