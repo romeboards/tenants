@@ -16,6 +16,7 @@ angular.module('mean.system').controller('RegController', ['$rootScope','$scope'
       Address.getBuildingOwners($scope.streetNumber, $scope.streetName, function(owners) {
         $scope.otherBuildings = [];
         $scope.owners = owners;
+        $scope.selectOwner(owners[0]);
       });
 
     }
