@@ -9,7 +9,8 @@ var express = require('express'),
 
 // Database
     mongo = require('mongoskin'),
-    db = mongo.db("mongodb://localhost:27017/housing", {native_parser:true});
+    //db = mongo.db("mongodb://localhost:27017/housing", {native_parser:true});
+    db = mongo.db("mongodb://heroku_app34396831:74lfpralgg9octbue7gh3bg65v@ds049641.mongolab.com:49641/heroku_app34396831", {native_parser:true});
 
 /**
  * Main application entry file.
