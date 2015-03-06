@@ -17,14 +17,29 @@ angular.module('mean.system').controller('IssuesController', ['$rootScope','$sco
   			}
   		}); //end getThreeOneOne
 
-  		Address.getCodeViolations($scope.streetNumber, $scope.streetName, function(data, error) {
+      // just starting with brooklyn
+  		Address.getHPDViolations('3', $rootScope.block, $rootScope.lot, function(data, error) {
 
 			  if(error) {
 			    console.error(error);
 			  } else {
+
+          console.log('violations ',data);
 			    $scope.hpdviolations = data;
 			  } 
   		});
+
+      // just starting with brooklyn
+      Address.getHPDComplaints('3', $rootScope.block, $rootScope.lot, function(data, error) {
+
+        if(error) {
+          console.error(error);
+        } else {
+
+          console.log('complaints',data);
+          $scope.hpdcomplaints = data;
+        } 
+      });
 
   	}
   });		

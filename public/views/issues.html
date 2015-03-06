@@ -23,22 +23,52 @@
         </table>
       </div>
 
-      <div data-ng-show="hpdviolations">
+      <div data-ng-show="hpdcomplaints.length">
+        <h3>HPD complaints registered</h3>
+        <table class="table">
+          <tr>
+            <th>Unit</th>
+            <th>Space</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Code</th>
+            <th>Status</th>
+            <th>Status Date</th>
+            <th>Description</th>
+          </tr>
+          <tr data-ng-repeat="complaint in hpdcomplaints | orderBy:-complaint.StatusDate" >
+            <td>{{ complaint.complaint.UnitType }}</td>
+            <td>{{ complaint.complaint.SpaceType  }}</td>
+            <td>{{ complaint.complaint.Type  }}</td>
+            <td>{{ complaint.complaint.MajorCategory }}</td>
+            <td>{{ complaint.complaint.Code }}</td>
+            <td>{{ complaint.complaint.Status }}</td>
+            <td>{{ complaint.complaint.StatusDate }}</td>
+            <td>{{ complaint.complaint.StatusDescription }}</td>
+          </tr>
+        </table>
+      </div> 
+
+      <div data-ng-show="hpdviolations.length">
         <h3>HPD code violations</h3>
         <table class="table">
           <tr>
+            <th>Class</th>
             <th>Inspection Date</th>
             <th>Last Updated</th>
             <th>Violation ID</th>
             <th>Status</th>
+            <th>Apartment Number</th>
             <th>Description</th>
           </tr>
-          <tr data-ng-repeat="violation in hpdviolations | orderBy:-violation.inspectiondate" >
-            <td>{{ violation.inspectiondate | date }}</td>
-            <td>{{ violation.currentstatusdate | date }}</td>
-            <td>{{ violation.violationid }}</td>
-            <td>{{ violation.currentstatus }}</td>
-            <td>{{ violation.novdescription }}</td>
+          <tr data-ng-repeat="violation in hpdviolations | orderBy:-violation.InspectionDate" >
+            <td>{{ violation.Class }}</td>
+            <td>{{ violation.InspectionDate | date }}</td>
+            <td>{{ violation.CurrentStatusDate | date }}</td>
+            <td>{{ violation.ViolationID }}</td>
+            <td>{{ violation.CurrentStatus }}</td>
+            <td>{{ violation.Apartment }}</td>
+            <td>{{ violation.NOVDescription }}</td>
           </tr>
         </table>
       </div>    

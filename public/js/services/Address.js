@@ -12,7 +12,8 @@ angular.module('mean')
 .factory('Address', ['$http', '$q', function Address($http, $q) {
 
     var dob_threeoneone = 'https://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
-    var hpd_codeviolations = 'https://data.cityofnewyork.us/resource/wvxf-dwi5.json';
+    var hpd_violations = 'api/blding/hpdviolations/';
+    var hpd_complaints = 'api/blding/hpdcomplaints/';
     var hpd_registrations = 'https://data.cityofnewyork.us/resource/tesw-yqqr.json';
     var hpd_contacts = 'https://data.cityofnewyork.us/resource/feu5-w2e2.json';
 
@@ -136,8 +137,8 @@ angular.module('mean')
           callback(null, e);
         });       
       },      
-      getCodeViolations: function(streetNumber, streetName, callback) {
-        $http.get(hpd_codeviolations, { params: { housenumber: streetNumber, streetname: streetName }})
+      getHPDViolations: function(boro, block, lot, callback) {
+        $http.get(hpd_violations + boro + '/' + block + '/' + lot)
         .success(function(data, status, headers, config) {
           callback(data, null);
         })
@@ -145,6 +146,15 @@ angular.module('mean')
           callback(null, e);
         });
       },
+      getHPDComplaints: function(boro, block, lot, callback) {
+        $http.get(hpd_complaints + boro + '/' + block + '/' + lot)
+        .success(function(data, status, headers, config) {
+          callback(data, null);
+        })
+        .error(function (e) {
+          callback(null, e);
+        });
+      },      
       getTaxInfo: function(addr, callback) {
         $http.get(api_taxinfo + addr)
         .success(function(data, status, headers, config) {

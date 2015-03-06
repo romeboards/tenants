@@ -57,3 +57,31 @@ exports.findDHCR = function() {
     });
   }
 };
+
+exports.findHPDViolations = function() {
+  return function(req, res) {
+
+    var _boro = req.params.boro;
+    var _block = req.params.block;
+    var _lot = req.params.lot;
+    var db = req.db;
+
+    db.collection('hpdviolations').find({ BoroID : _boro, Block : _block, Lot : _lot }).toArray(function (err, items) {
+       res.json(items);
+    });
+  }
+};
+
+exports.findHPDComplaints = function() {
+  return function(req, res) {
+
+    var _boro = req.params.boro;
+    var _block = req.params.block;
+    var _lot = req.params.lot;
+    var db = req.db;
+
+    db.collection('hpdcomplaints').find({ BoroughID : _boro, Block : _block, Lot : _lot }).toArray(function (err, items) {
+       res.json(items);
+    });
+  }
+};

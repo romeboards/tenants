@@ -3,13 +3,6 @@
 angular.module('mean.system').controller('IndexController', ['$rootScope','$scope', '$http', 'Address', function ($rootScope, $scope, $http, Address) {
 
   $rootScope.state = 0;
-  $scope.streetNumber = '1045';
-  $scope.streetName = 'Union Street';
-  $rootScope.addr = $scope.streetNumber + ' ' + $scope.streetName;
-  $rootScope.addr = $rootScope.addr.toUpperCase();
-  $rootScope.streetName = $scope.streetName;
-  $rootScope.streetNumber = $scope.streetNumber;
-
 
   $scope.$watch(function(){ return $rootScope.addr }, function(val) {	
 
@@ -23,6 +16,9 @@ angular.module('mean.system').controller('IndexController', ['$rootScope','$scop
 
           $scope.geosupport = data;
           $scope.communityBoard = data.communityDistrictNumber;
+          $rootScope.boro = $scope.geosupport.bblBoroughCode;
+          $rootScope.block = $scope.geosupport.bblTaxBlock.replace(/^0+/, '');
+          $rootScope.lot = $scope.geosupport.bblTaxLot.replace(/^0+/, '');
 
           Address.getCommunityBoard($scope.communityBoard, function(data, error) {
             if(error) console.error(error);

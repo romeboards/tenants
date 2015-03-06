@@ -13,6 +13,8 @@ module.exports = function(app) {
   app.get('/api/blding/taxes/:addr', bldings.findTaxes());
   app.get('/api/blding/addr/:boro/:block/:lot', bldings.findAddr());
   app.get('/api/blding/dhcr/:boro/:block/:lot', bldings.findDHCR());
+  app.get('/api/blding/hpdviolations/:boro/:block/:lot', bldings.findHPDViolations());
+  app.get('/api/blding/hpdcomplaints/:boro/:block/:lot', bldings.findHPDComplaints());
   app.get('/api/geocode/:addr', geocoder.geocode());
   app.get('/api/geoclient/:number/:street', geoclient.getGeosupport());
   app.get('/api/geoclient/bbl/:number/:street', geoclient.getGeosupportBBL());  
