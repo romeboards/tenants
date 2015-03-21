@@ -3,12 +3,13 @@
   <div class="jumbotron">
     <div class="main">
  
-      <div data-ng-show="requests">
+<!--       <div data-ng-show="requests">
         <h3>311 service requests</h3>
         <table class="table">
           <tr>
             <th>Created Date</th>
             <th>Closed Date</th>
+            <th>Agency</th>
             <th>Status</th>
             <th>Complaint Type</th>
             <th>Description</th>
@@ -16,12 +17,60 @@
           <tr data-ng-repeat="request in requests | orderBy:-request.created_date" >
             <td>{{ request.created_date | date }}</td>
             <td>{{ request.closed_date | date }}</td>
+            <td>{{ request.agency }}</td>
             <td>{{ request.status }}</td>
             <td>{{ request.complaint_type }}</td>
             <td>{{ request.descriptor }}</td>
           </tr>
         </table>
-      </div>
+      </div> -->
+
+      <h2>Complaints Received</h2>
+      <accordion close-others="false">
+        <accordion-group data-ng-repeat="(type,issue) in issues">
+          <accordion-heading>{{ type }} ({{ issue.length }})</accordion-heading>
+          <table class="table">
+          <tr>
+            <th>Issue Type</th>
+            <th>Created Date</th>
+            <th>Closed Date</th>
+            <th ng-show="type === 'misc'">Complaint Type</th>
+            <th>Agency</th>
+            <th>Status</th>
+            <th>Description</th>
+          </tr>
+          <tr data-ng-repeat="request in issue | orderBy:sortByDate:true" >
+            <td>{{ request.dept + ' ' + request.level }}</td>
+            <td>{{ request.created_date | date }}</td>
+            <td>{{ request.closed_date | date }}</td>
+            <td ng-show="type === 'misc'">{{ request.type }}</td>
+            <td>{{ request.agency }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.desc }}</td>
+          </tr>
+        </table>
+        </accordion-group>
+      </accordion>
+
+<!--       <div data-ng-repeat="(type,issue) in issues">
+        <h3>{{ type }}</h3>
+        <table class="table">
+          <tr>
+            <th>Created Date</th>
+            <th>Closed Date</th>
+            <th>Agency</th>
+            <th>Status</th>
+            <th>Description</th>
+          </tr>
+          <tr data-ng-repeat="request in issue | orderBy:sortByDate:true" >
+            <td>{{ request.created_date | date }}</td>
+            <td>{{ request.closed_date | date }}</td>
+            <td>{{ request.agency }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.desc }}</td>
+          </tr>
+        </table>
+      </div> -->
 
       <div data-ng-show="hpdcomplaints.length">
         <h3>HPD complaints registered</h3>

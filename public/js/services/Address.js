@@ -12,6 +12,7 @@ angular.module('mean')
 .factory('Address', ['$http', '$q', function Address($http, $q) {
 
     var dob_threeoneone = 'https://data.cityofnewyork.us/resource/anu9-nf8x.json';			//311 Brooklyn requests
+    var dob_threeoneone_ALL = 'https://data.cityofnewyork.us/resource/erm2-nwe9.json';
     var hpd_violations = 'api/blding/hpdviolations/';
     var hpd_complaints = 'api/blding/hpdcomplaints/';
     var hpd_registrations = 'https://data.cityofnewyork.us/resource/tesw-yqqr.json';
@@ -110,7 +111,7 @@ angular.module('mean')
         });        
       },
       getThreeOneOne: function(addr, callback) {
-        $http.get(dob_threeoneone, { params: { incident_address: addr }})
+        $http.get(dob_threeoneone_ALL, { params: { incident_address: addr }})
         .success(function(data, status, headers, config) {
           callback(data, null);
         })
