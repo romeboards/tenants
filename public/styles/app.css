@@ -7666,3 +7666,15 @@ registrations-map .map {
   width: 100%;
   height: 50vh;
 }
+
+/* line 36, ../../app/styles/app.scss */
+street-view > div {
+  float: left;
+  width: 50%;
+  height: 40vh;
+}
+
+/* line 42, ../../app/styles/app.scss */
+#streetview {
+  width: 100%;
+}

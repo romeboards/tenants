@@ -103,7 +103,7 @@ angular.module('mean')
       getGeosupport: function(streetNumber, streetName, callback) {
         $http.get(api_geoclient + streetNumber + '/' + streetName)
         .success(function(data, status, headers, config) {
-          console.log('geoclient', data);
+          //console.log('geoclient', data);
           callback(data, null);
         })
         .error(function (e) {

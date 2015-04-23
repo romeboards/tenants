@@ -28,7 +28,18 @@
       <h2>Complaints Received</h2>
       <accordion close-others="false">
         <accordion-group data-ng-repeat="(type,issue) in issues">
-          <accordion-heading>{{ type }} ({{ issue.length }})</accordion-heading>
+          <accordion-heading>
+            {{ type }} ({{ issue.length }})
+          </accordion-heading>
+
+          <a class="btn btn-danger btn-sm"
+             data-ng-href="{{ getComplaintRequest(type) }}"
+             target="_blank">
+            create new 311 request
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </a>
+          <br /><br />
+
           <table class="table">
           <tr>
             <th>Issue Type</th>

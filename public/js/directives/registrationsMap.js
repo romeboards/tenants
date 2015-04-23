@@ -1,21 +1,10 @@
 'use strict';
 
 angular.module('mean')
-	.directive('navbar', function () {
-	    return {
-	      scope: {},
-	      templateUrl: 'partials/navbar.html',
-	      controller: 'NavCtrl',
-	      link: function postLink(scope, element) {
-	      }
-    	};
- 	});
-
-angular.module('mean')
-	.directive('registrationsMap', ['Address', function (Address) {
+  .directive('registrationsMap', ['Address', function (Address) {
     return {
       scope: {
-      	owner: '=',
+        owner: '=',
         buildings: '='
       },
       template: '<div class="map"></div>',
@@ -83,5 +72,5 @@ angular.module('mean')
 
         });
       }
-  	};
- 	}]);
+    };
+  }]);

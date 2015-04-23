@@ -2,7 +2,7 @@ script(type='text/javascript', src='/lib/jquery/jquery.js')
 
 //Google Maps
 //[TODO]this should really be loaded only for the registrations view...
-script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBwGBCr666OkgCODVFLwUZhwT9W9qLEHFo')
+script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCJKZm-rRtfREo2o-GNC-feqpbSvfHNB5s&libraries=geometry')
 
 //AngularJS
 script(type='text/javascript', src='/lib/angular/angular.js')
@@ -17,8 +17,12 @@ script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap-tpls.js'
 //Application Init
 script(type='text/javascript', src='/js/app.js')
 script(type='text/javascript', src='/js/config.js')
-script(type='text/javascript', src='/js/directives.js')
 script(type='text/javascript', src='/js/filters.js')
+
+//Application Directives
+script(type='text/javascript', src='/js/directives/navbar.js')
+script(type='text/javascript', src='/js/directives/registrationsMap.js')
+script(type='text/javascript', src='/js/directives/streetview.js')
 
 //Application Services
 script(type='text/javascript', src='/js/services/Address.js')

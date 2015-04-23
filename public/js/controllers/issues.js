@@ -9,6 +9,16 @@ angular.module('mean.system').controller('IssuesController', ['$rootScope','$sco
       return date;
   };
 
+  var complaintRequestUrl = 'https://www1.nyc.gov/nyc311-hpd-service-request/form.htm?locationType=Apartment&topic=Apartment%20Only';
+
+  var complaintRequestTypes = {
+    serious: '',
+    general: '',
+    electric: '',
+    heating: 'Heat/Hot%20Water',
+    misc: ''    
+  };
+
   $scope.issues = {
     serious: [],
     general: [],
@@ -16,6 +26,10 @@ angular.module('mean.system').controller('IssuesController', ['$rootScope','$sco
     heating: [],
     misc: []
   };
+
+  $scope.getComplaintRequest = function(type) {
+    return complaintRequestUrl + '&complaintType=' + complaintRequestTypes[type];
+  }
 
 
   $scope.$watch(function(){ return $rootScope.addr }, function(val) {	

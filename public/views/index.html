@@ -3,7 +3,14 @@
   <div class="jumbotron">
     <div class="main">
  
-       <div data-ng-show="geosupport">
+      <!-- <street-view></street-view> -->
+      <div data-ng-show="geosupport">
+        <h2>{{ geosupport.houseNumber }} {{ geosupport.firstStreetNameNormalized | titleCase }}, {{ geosupport.firstBoroughName | titleCase }}</h2>
+        <h4><em>{{ geosupport.ntaName }}</em></h4>
+      </div>
+      <img id="streetview" data-ng-src="https://maps.googleapis.com/maps/api/streetview?size=960x200&location={{geosupport.latitude}},{{geosupport.longitude}}&key=AIzaSyCJKZm-rRtfREo2o-GNC-feqpbSvfHNB5s" />
+
+      <div data-ng-show="geosupport">
         <h3>General Information</h3>
         <div><b>assembly district:</b>  {{geosupport.assemblyDistrict}}</div>
         <div><b>city council district:</b>  {{geosupport.communitySchoolDistrict}}</div>

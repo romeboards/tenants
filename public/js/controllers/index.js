@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$rootScope','$scope', '$http', 'Address', function ($rootScope, $scope, $http, Address) {
+angular.module('mean.system').controller('IndexController', ['$rootScope','$scope', '$http', 'Address',
+  function ($rootScope, $scope, $http, Address) {
 
   $rootScope.state = 0;
 
@@ -12,7 +13,8 @@ angular.module('mean.system').controller('IndexController', ['$rootScope','$scop
 
         if(error) console.log(error);
         else {
-          //console.log('geosupport', data);
+          
+          console.log('geosupport', data);
 
           $scope.geosupport = data;
           $scope.communityBoard = data.communityDistrictNumber;
